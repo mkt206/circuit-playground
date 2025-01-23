@@ -1,0 +1,19 @@
+print("Flow Control - IF/ELIF Labs are begining")
+
+print('This is a Guessing Game')
+print("Ready to play?")
+
+def main():
+  var1 = input("Enter a number between 1 and 5")
+  var1 = int(var1)
+  print("you chose:", var1)
+  var2 = 3
+  
+  while var1 != var2:
+    print("Wrong! Try again!")
+    var1 = input("Enter a number between 1 and 5: ")
+    var1 = int(var1)
+    print("you chose: ", var1)
+  else:
+    print("Correct! The number was 3.")
+main()
