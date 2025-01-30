@@ -1,0 +1,143 @@
+# Python Lab - Scratch Pad
+# Use this template to try some code... Use it as a scratch pad.
+# Remember To Copy Your Edited Code To Your GitHub
+# https://github.com/
+
+# Add Any Header Comments, Versioning & License
+# Add a Comment Here to describe/explain what you are doing 
+# What is the purpose of this code… Document It
+
+# Your Code Starts Here:
+# Include any Libraries
+# Declare Any Global Variables
+
+def main():
+  print("Starting The Code Challenge")
+  x = "dog"
+  X = 3
+  # X and x are different
+
+  print("Starting Changing Variable Values and Types Of Code Challenge")
+  # Enter Your Code Here:
+  print(x) # dog
+  print(type(x)) # str
+  x = 60.5 #changing x value (and type str -> float)
+  print(x) # 60.5
+  print(type(x)) # float
+  print(X) # 3
+  X = x + X # #changing X value (and type int -> float)
+  print(X) # 63.5
+  print(type(X)) # float
+  print("Ending Changing Variable Values and Types Of Code Challenge")
+  print("Ending The Code Challenge")
+
+main()
+
+print("-------------------------------------------------")
+
+def main():
+  print("Starting The Code Challenge")
+  # not possible: Python Keywords; containing spaces, start with a number or contain anything other than alpha-numeric characters and underscores
+  my_var = "Snake Case"
+  myVar = "Camel Case"
+  MyVar = "Pascal Case"
+  x = 1 
+  #not the same as
+  X = 2
+
+  print("Starting Variable Names Part Of Code Challenge")
+  # Enter Your Code Here:
+  print('my_var =' + my_var)
+  print('myVar =' + myVar)
+  print('MyVar =' + MyVar)
+  print ("x = X is:")
+  print (x == X)
+  print("Ending Variable Names Part Of Code Challenge")
+  print("Ending The Code Challenge")
+
+main()
+
+print("-------------------------------------------------")
+
+def main():
+  print("Starting The Code Challenge")
+  #multiple values to multiple variables
+  x, y, z = "dog", "cat", "mouse"
+
+  #One Value to Multiple Variables
+  a = b = c = "rabbit"
+
+  #Unpack a Collection
+  pets = ["dog", "cat", "mouse", "rabbit"]
+  A, B, C, D = pets
+
+  print("Starting Assign Multiple Values Part Of Code Challenge")
+  #multiple values to multiple variables
+  print(x)
+  print(y)
+  print(z)
+
+  #One Value to Multiple Variables
+  print(a)
+  print(b)
+  print(c)
+
+  #Unpack a Collection
+  print(A)
+  print(B)
+  print(C)
+  print(D)
+  
+  print("Ending Assign Multiple Values Part Of Code Challenge")
+  print("Ending The Code Challenge")
+
+main()
+
+print("-------------------------------------------------")
+
+def main():
+  print("Starting The Code Challenge")
+  a = "python is awesome"
+  x = "Python"
+  y = "is"
+  z = "awesome"
+  b = 14
+
+  print("Starting Outputs Part Of Code Challenge")
+  print(a)
+  print(x, y, z)
+  print(x + ' ' + y + ' ' + z)
+  #can't do b+a
+  print(b, a)
+
+  print("Ending Outputs Part Of Code Challenge")
+  print("Ending The Code Challenge")
+
+main()
+
+print("-------------------------------------------------")
+
+def main():
+  print("Starting The Code Challenge")
+  x = "awesome" #global
+  y = "global"
+
+  print("Starting Global Variables Part Of Code Challenge")
+  def myfunc():
+    x = "fantastic" #local
+    y = "local"
+    print("Python is " + x)
+    print(y)
+   #local > global inside function
+  myfunc()
+
+  print("Python is " + x)
+  print(y)
+  #global > local outside function
+
+  print("Ending Global Variables Part Of Code Challenge")
+  print("Ending The Code Challenge")
+
+main()
+
+print("hello world!")
