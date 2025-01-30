@@ -1,0 +1,198 @@
+# Contains all Ch 2 Labs
+
+def main():
+  #all IF labs
+  x = input("Enter a number for x: ")
+  x = int(x)
+  y = input("Enter a number for y: ")
+  y = int(y)
+  
+  
+  if x == y:
+    print("x = y is True")
+    print("x is y")
+    print(x, "is equal to", y)
+    print(x, "=", y)
+  else:
+    print("x = y is False")
+    print("x is not y")
+    print(x, "is not equal to", y)
+    print(x, "!=", y)
+  
+  if x != y:
+    print("x != y is True")
+    print("x is not y")
+    print(x, "is not equal to", y)
+  else:
+    print("x != y is False")
+    print("x is y")
+    print(x, "is equal to", y)
+  
+  if x > y:
+    print("x > y is True")
+    print(x, "greater than", y)
+  else:
+    print("x > y is False")
+    print(x, "less than", y)
+  
+  if x < y:
+    print("x < y is True")
+    print(x, "less than", y)
+  else:
+    print("x < y is False")
+    print(x, "greater than", y)
+  
+  if x >= y:
+    print("x >= y is True")
+    print(x, "greater than or equal to", y)
+  elif x<=y:
+    print("x <= y is True")
+    print(x, "less than or equal to", y)
+  
+  print("asking questions is over")
+main()
+
+
+print("-----------------------------------------------")
+print("Flow Control - IF/ELIF 1 Labs are begining")
+
+print('This is a Guessing Game')
+print("Ready to play?")
+import random
+
+def main():
+  var1 = random.randint(1,5)
+  print("chosen number:", var1)
+  var2 = 3
+
+  while var1 != var2:
+    print("Wrong! Trying again!")
+    var1 = random.randint(1,5)
+    print("chosen number: ", var1)
+  else:
+    print("Correct! The number was 3.")
+main()
+
+print("-----------------------------------------------")
+print("Flow Control - IF/ELIF 2 Labs are begining")
+
+print('This is a Guessing Game')
+print("Ready to play?")
+
+def main():
+  var1 = input("Enter a number between 1 and 5: ")
+  var1 = int(var1)
+  print("you chose:", var1)
+  var2 = 3
+  
+  while var1 != var2:
+    print("Wrong! Try again!")
+    var1 = input("Enter a number between 1 and 5: ")
+    var1 = int(var1)
+    print("you chose: ", var1)
+  else:
+    print("Correct! The number was 3.")
+main()
+
+print("-----------------------------------------------")
+print("Flow Control - IF/ELIF 3 Labs are begining")
+
+print('This is a Guessing Game')
+print("Ready to play?")
+
+def main():
+  var1 = input("Enter a number between 1 and 5: ")
+  var1 = int(var1)
+  print("you chose: ", var1)
+  var2 = 3
+
+  while var1 != var2:
+    if var1 - var2 == 1 or var2 - var1 == 1:
+      print("close! You are ±1 away from the answer")
+    else:
+      print("Wrong! Try again!")
+    var1 = input("Enter a number between 1 and 5: ")
+    var1 = int(var1)
+    print("you chose: ", var1)
+  else:
+    print("Correct! The number was 3.")
+main()
+
+# 8.1.2.3.2 - Python - Ch 2 - Flow Control - TRY - 🔎 Review /🛠️ LAB Activity / 🚀 Quiz - ⚓\
+# Lab 1
+def main():
+  x = 7
+  print(x)
+main()
+
+# Lab 2
+def main():
+  x = 7
+  print(x)
+  if x == 7 :
+    print(x,"is equal to Seven")
+main()
+
+# Lab 3
+def main():
+  x = input("enter a number > ")
+  print(x)
+  print(type(x))
+  try:
+    x = int(x)
+  except ValueError:
+    print("That wasn't a number. Enter a valid number. ಠ_ಠ")
+  else:
+    y = x + 5
+    print(y)
+main()
+
+# Lab 4
+def main():
+  dataGood = False
+  while dataGood == False:
+    try:
+      my_number = int(input("enter a number > "))
+    except ValueError:
+      print("That wasn't a number. Enter a valid number. ಠ_ಠ")
+    else:
+      print(my_number, 'is a number')
+      dataGood = True
+    print('done')
+main()
+
+# Lab 5
+def main():
+  my_number = input("enter a number > ")
+  try:
+    my_number = int(my_number)
+    print(my_number, 'is a number')
+  except ValueError:
+    print('Please enter a number')
+    print(my_number, 'is NOT a number')
+  print('done')
+main()
+
+#8.1.2.3.7* - Python - Ch2 - Flow Control - guess-3.py - TRY/EXCEPT - 🛠️ LAB Activity - ⚓
+def main():
+  data = False
+  var2 = 3
+  while data == False:
+    try:
+      var1 = int(input("Enter a number between 1 and 5: "))
+    except ValueError:
+      print("That wasn't a number. Enter a valid number. ಠ_ಠ")
+    else:
+      data = True
+      while var1 != var2:
+        if var1 - var2 == 1 or var2 - var1 == 1:
+          print("close! You are ±1 away from the answer")
+        else:
+          print("Wrong! Try again!")
+        var1 = input("Enter a number between 1 and 5: ")
+        var1 = int(var1)
+        print("you chose: ", var1)
+      else:
+        print("Correct! The number was 3.")
+  print("you chose: ", var1)
+main()
