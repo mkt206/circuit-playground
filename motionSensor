@@ -1,0 +1,45 @@
+# twinkle
+import time
+from adafruit_circuitplayground import cp
+
+while True:
+    x, y, z = cp.acceleration  # Get accelerometer data
+    magnitude = (x**2 + y**2 + z**2) ** 0.5  # Calculate vector length
+    
+    print(f"X: {x:.2f}, Y: {y:.2f}, Z: {z:.2f}, Magnitude: {magnitude:.2f}")
+    
+    if abs(magnitude - 9.8) > 3:  # Detect significant movement
+        print("Twinkle!")
+        cp.pixels.fill((255, 0, 0))  # Turn LEDs red
+        time.sleep(1)
+        cp.pixels.fill((0, 0, 0))  # Turn off LEDs
+    
+    time.sleep(0.1)  # Small delay
+
+----------------------------------------------------------------------------------------------------
+# taps
+import time
+from adafruit_circuitplayground import cp
+
+# Enable tap detection
+cp.detect_taps = 2  # Set to 1 for single tap, 2 for double tap
+
+while True:
+    x, y, z = cp.acceleration  # Get accelerometer data
+    print(f"Acceleration - X: {x:.2f}, Y: {y:.2f}, Z: {z:.2f}")
+
+    # Check for a single tap
+    if cp.tapped:
+        print("Single Tap Detected!")
+        cp.pixels.fill((0, 255, 0))  # Green light for single tap
+        time.sleep(0.2)
+        cp.pixels.fill((0, 0, 0))  # Turn off LEDs
+
+    # Check for a double tap
+    if cp.tapped and cp.detect_taps == 2:
+        print("Double Tap Detected!")
+        cp.pixels.fill((255, 0, 0))  # Red light for double tap
+        time.sleep(0.5)
+        cp.pixels.fill((0, 0, 0))  # Turn off LEDs
+
+    time.sleep(1)  # Short delay to avoid excessive printing
