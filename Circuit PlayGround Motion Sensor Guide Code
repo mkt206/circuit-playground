@@ -1,0 +1,38 @@
+import time
+from adafruit_circuitplayground import cp
+
+# Enable tap detection
+cp.detect_taps = 2  # Set to 1 for single tap, 2 for double tap
+
+while True:
+    x, y, z = cp.acceleration  # Get accelerometer data
+    print(f"Acceleration - X: {x:.2f}, Y: {y:.2f}, Z: {z:.2f}")
+
+# Tap and Double Taps
+    # Check for a single tap
+    if cp.tapped:
+        print("Single Tap Detected!")
+        cp.pixels.fill((0, 255, 0))  # Green light for single tap
+        time.sleep(0.2)
+        cp.pixels.fill((0, 0, 0))  # Turn off LEDs
+
+    # Check for a double tap
+    if cp.tapped and cp.detect_taps == 2:
+        print("Double Tap Detected!")
+        cp.pixels.fill((255, 0, 0))  # Red light for double tap
+        time.sleep(0.5)
+        cp.pixels.fill((0, 0, 0))  # Turn off LEDs
+
+# Tilt-Controlled Lights
+    if x > 5:  # Tilt right
+        cp.pixels.fill((255, 0, 0))  # Red
+    elif x < -5:  # Tilt left
+        cp.pixels.fill((0, 0, 255))  # Blue
+    elif y > 5:  # Tilt forward
+        cp.pixels.fill((255, 255, 0))  # Yellow
+    elif y < -5:  # Tilt backward
+        cp.pixels.fill((0, 255, 255))  # Cyan
+    else:
+        cp.pixels.fill((0, 255, 0))  # Green when flat
+
+    time.sleep(0.1) # Short delay to avoid excessive printing
