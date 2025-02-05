@@ -1,0 +1,43 @@
+#Random Numbers & WHILE Loops
+from random import randint
+def main():
+    print("Starting Code Challenge")
+    # Declare Any main() Variables - (Not Global)
+    
+    print("Getting Random Number")
+    # myRand = randint(1,10)
+    myRand = 0
+    i = 0
+    print("Starting While Loop - Test Random Number")
+    while myRand < 10:
+        myRand = randint(1,10)
+        i = i + 1
+        print(myRand)    
+    print("Ending While Loop")
+    print("Ending Code Challenge")
+    print(i)
+
+main()
+
+#Do Math On User Input
+def main1():
+  print("Starting Code Challenge")
+  x = 0
+  dataGood = 0
+  i = 0
+  while dataGood == 0:
+    try:
+      my_number = int(input("enter a number greater than or equal to 20 > "))
+    except ValueError:
+      print("That wasn't a number greater than or equal to 20. Enter a valid value. ಠ_ಠ")
+    else:
+      if my_number >= 20:
+        dataGood = 1
+        print(my_number, 'is a number greater than equal to 20, great job!')
+        while i < 5:
+            my_number = my_number/2
+            print("The current value of the user input after some math is ", my_number)
+            i = i + 1
+            print("The while loop has looped", i, "times")
+  print("Ending Code Challenge")
+main1()
