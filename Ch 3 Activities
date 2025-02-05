@@ -1,4 +1,4 @@
-# Ch 3 - Functions - Lab #1 - Built-In Functions
+# Ch 3 - Lab #1 - Built-In Functions
 def main1():
   print('Playing with Builtin Python Functions')
   student_name = "Medha Tirumalai"
@@ -25,3 +25,25 @@ def main1():
   c = min(z)
   print("minimum of list z is ", c)
 main1()
+
+# Ch 3 - Lab #2 - min() & max() Functions
+def main3():
+  # Challenge 1
+  my_string = "STEAM Is Cool"
+  print('The variable "my_string" = ',my_string)
+  biggest = max(my_string)
+  print('The biggest character in the string "STEAM Is Cool" is',biggest)
+  smallest = min(my_string)
+  print('The smallest character in the string "STEAM Is Cool" is',smallest)
+  #space has an ASCII code of 00100000 (32)
+  #lowercase s has an ASCII code of 01110011 (115)
+  #man and min are based on ASCII codes and lowercase s has a larger code than uppercase s
+
+  #Challenge 2
+  your_string = input("Enter a sentence >>")
+  print('The variable your string = ', your_string)
+  your_biggest = max(your_string)
+  print('The biggest character in your string is', your_biggest)
+  your_smallest = min(your_string)
+  print('The smallest character in your string is', your_smallest)
+main3()
