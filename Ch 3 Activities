@@ -1,0 +1,27 @@
+# Ch 3 - Functions - Lab #1 - Built-In Functions
+def main1():
+  print('Playing with Builtin Python Functions')
+  student_name = "Medha Tirumalai"
+  program_creation_date = "02/05/2025"
+  print(student_name)
+  print(program_creation_date)
+  print("-------------------------")
+  x = 15
+  z = [5, 6, 7, 8, 9, 10, 11, 0]
+  print("x = ", x)
+  y = input("Enter a Number >> ")
+  print("y = ", y)
+  print("z = ", z)
+  print("int(y) = ", int(y))
+  print("abs(y) = ", abs(int(y)))
+  print("len(z) = ", len(z))
+  print("type(y) = ", type(y))
+  print("type(z) = ", type(z))
+
+  a = list(filter(lambda x: x % 2 == 0, z))
+  print(a)
+  b = bin(z[1])
+  print("binary of z[1] is ",b)
+  c = min(z)
+  print("minimum of list z is ", c)
+main1()
