@@ -41,3 +41,27 @@ def main1():
             print("The while loop has looped", i, "times")
   print("Ending Code Challenge")
 main1()
+
+#Compare User Input To Count Variable
+def main2():
+  print("Starting Code Challenge")
+  dataGood = 0
+  i = 0
+  while dataGood == 0:
+    try:
+      my_number = int(input("enter a number between 0 and 9 > "))
+    except ValueError:
+      print("That wasn't a number between 0 and 9. Enter a valid value. ಠ_ಠ")
+    else:
+      if my_number <= 9:
+        dataGood = 1
+        print(my_number, 'is a number between 0 and 9, great job!')
+        while i < 10:
+            print(i)
+            if i == my_number:
+                print("The User variable is equal to the count variable.")
+                print("User Input = ", my_number)
+                print("Count Value = ", i)
+            i = i + 1
+  print("Ending Code Challenge")
+main2()
