@@ -65,3 +65,13 @@ def main2():
             i = i + 1
   print("Ending Code Challenge")
 main2()
+
+#Flow Control -WHILE - print(count)
+def main3():
+  i = 0
+  print("Starting While Loop")
+  while i < 10:
+    print(i)
+    i = i + 1
+  print("Ending While Loop")
+main3()
