@@ -59,3 +59,24 @@ def main4():
   print(ord("ú"))
   print(ord("á"))
 main4()
+
+def main5():
+  x = [1, 2, 4, 7, 9, 7, 5, 0]
+  y = "dinosaur! 🦖"
+  z = abs((5+9)*7/9)
+  
+  print(x)
+  print(y)
+  print('z =', z)
+  print(bin(x[4]))
+  print(hex(x[4]))
+  a = ord(y[2])
+  print(a)
+  print(chr(a))
+  print(round(z))
+  print(round(z, 2))
+  print(bool(x[-1]))
+  print(bool(x[0]))
+  print(bytearray(x))
+  print(ascii(y))
+main5()
