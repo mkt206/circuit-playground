@@ -92,3 +92,50 @@ def main6():
   print('resistance = ', resistance, chr(x))
   print("A circuit with a voltage of", voltage, "v and a current of ", current, "mA will require a resistor of", resistance, chr(x))
 main6()
+
+def main7():
+  #Challenge 1
+  print('Challenge 1')
+  def my_math(x,y) :
+    z=x+y
+    print('z is', z)
+    print(x, '+', y, '=', z)
+    return z
+  
+  def main():
+    my_num_1 = 5
+    my_num_2 = 2
+    sum = my_math(my_num_1, my_num_2)
+    print("The sum of", my_num_1, "+", my_num_2, "=",sum)
+  main()
+  
+  a = 6
+  b = 9
+  my_math(a,b)
+  
+  print('--------------------')
+  #Challenge 2
+  print('Challenge 2')
+  def multiply(x,y) :
+    z=x*y
+    print('z is', z)
+    print(x, '*', y, '=', z)
+    return z
+  
+  multiply(a, b)
+  
+  print('--------------------')
+  #Challenge 3
+  print('Challenge 3')
+  def addEven(x,y) :
+    z=x+y
+    print('z is', z)
+    print(x, '+', y, '=', z)
+    if(z % 2 != 0):
+      print('z is odd, so we add 1')
+      z = z+1
+      print("z + 1 =", z)
+    return z
+  
+  addEven(a, b)
+main7()
