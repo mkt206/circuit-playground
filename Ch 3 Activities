@@ -47,3 +47,15 @@ def main3():
   your_smallest = min(your_string)
   print('The smallest character in your string is', your_smallest)
 main3()
+
+#Ch 3 - Lab #3 - ord() & char()
+def main4():
+  print('Hola, Mi nombre es I' + str(chr(0xf1)) + 'igo Montoya')
+  print('T' + str(chr(250)) + ' mataste a mi padre. Prep'+ str(chr(225)) + 'rate a morir')
+  
+  #Hola, Mi nombre es Iñigo Montoya
+  #Tú mataste a mi padre. Prepárate a morir
+  
+  print(ord("ú"))
+  print(ord("á"))
+main4()
