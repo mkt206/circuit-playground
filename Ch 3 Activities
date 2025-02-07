@@ -80,3 +80,15 @@ def main5():
   print(bytearray(x))
   print(ascii(y))
 main5()
+
+def main6():
+  x = ord('Ω')
+  print(x)
+  
+  voltage = 5
+  current = 20
+  resistance = voltage*current
+  print("resistance = voltage * current")
+  print('resistance = ', resistance, chr(x))
+  print("A circuit with a voltage of", voltage, "v and a current of ", current, "mA will require a resistor of", resistance, chr(x))
+main6()
