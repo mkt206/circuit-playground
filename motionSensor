@@ -16,7 +16,7 @@ while True:
     
     time.sleep(0.1)  # Small delay
 
-----------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------
 # taps
 import time
 from adafruit_circuitplayground import cp
@@ -41,5 +41,21 @@ while True:
         cp.pixels.fill((255, 0, 0))  # Red light for double tap
         time.sleep(0.5)
         cp.pixels.fill((0, 0, 0))  # Turn off LEDs
+ # ------------------------------------------------------------------------------
+ # Tilt-Controlled Lights 
+
+    if abs(x) > abs(y) and abs(x) > abs(z):
+        if x > 0:
+            cp.pixels.fill((255, 0, 0))  # Red for right side up
+        else:
+            cp.pixels.fill((0, 255, 0))  # Green for left side up
+    elif abs(y) > abs(x) and abs(y) > abs(z):
+        if y > 0:
+            cp.pixels.fill((0, 0, 255))  # Blue for front up
+        else:
+            cp.pixels.fill((255, 255, 0))  # Yellow for back up
+    else:
+        cp.pixels.fill((255, 0, 255))  # Purple for flat
+
 
     time.sleep(1)  # Short delay to avoid excessive printing
