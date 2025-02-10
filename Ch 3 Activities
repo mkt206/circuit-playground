@@ -237,3 +237,30 @@ def main8():
   func = input("function: choose 'add', 'subtract', 'multiply' or 'divide' >>")
   choose(val1, val2, func)
 main8()
+
+def main9():
+  def greet(lang):
+    if lang == 'es':
+      return'Hola'
+    elif lang == 'fr':
+      return'Bonjour'
+    elif lang == 'sw':
+      return'Habari'
+    elif lang == 'uk':
+      return'привіт'
+    elif lang == 'mi':
+      return'Mae govannen'
+    elif lang == 'kl':
+      return'nuqneH'
+    else:
+      return'Hello'
+
+  name = input("What is your name? >>")
+  print("language choices:\n en is English\n es is Spanish\n fr is French\n sw is Swahili\n uk is Ukrainian\n mi is Middle Earth Elven\n kl is Klingon")
+  print("use the 2 letter codes!")
+  language = str(input("Which is your prefered language out of the list above? >>"))
+  def main(language, name):
+      print(greet(language), name)
+      
+  main(language, name)
+main9()
