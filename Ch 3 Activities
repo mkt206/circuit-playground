@@ -101,18 +101,18 @@ def main7():
     print('z is', z)
     print(x, '+', y, '=', z)
     return z
-  
+
   def main():
     my_num_1 = 5
     my_num_2 = 2
     sum = my_math(my_num_1, my_num_2)
     print("The sum of", my_num_1, "+", my_num_2, "=",sum)
   main()
-  
+
   a = 6
   b = 9
   my_math(a,b)
-  
+
   print('--------------------')
   #Challenge 2
   print('Challenge 2')
@@ -121,9 +121,9 @@ def main7():
     print('z is', z)
     print(x, '*', y, '=', z)
     return z
-  
+
   multiply(a, b)
-  
+
   print('--------------------')
   #Challenge 3
   print('Challenge 3')
@@ -136,6 +136,104 @@ def main7():
       z = z+1
       print("z + 1 =", z)
     return z
-  
+
   addEven(a, b)
+
+  print('--------------------')
+  #Challenge 4
+  print('Challenge 4')
+
+  q = 8
+  w = 2
+  r = 'divide'
+
+  def divide(x,y) :
+    if y == 0:
+      print("Error: Cannot divide by zero!")
+      return None
+    z=x/y
+    print('z is', z)
+    print(x, '/', y, '=', z)
+    return z
+
+  def add(x,y) :
+    z=x+y
+    print('z is', z)
+    print(x, '+', y, '=', z)
+    return z
+
+  def subtract(x,y) :
+    z=x-y
+    print('z is', z)
+    print(x, '-', y, '=', z)
+    return z
+
+  def choose(x, y, a):
+    if(a == 'multiply'):
+      multiply(x, y)
+    elif(a == 'subtract'):
+      subtract(x, y)
+    elif(a == 'divide'):
+      divide(x, y)
+    else:
+      print("adding", x, "and", y)
+      print("if you did not choose this, try again and make sure to enter 'multiply', 'divide' or 'subtract'")
+      add(x, y)
+  choose(q, w, r)
 main7()
+
+def main8():
+  print('--------------------')
+  #Challenge 5
+  print('Challenge 5')
+  
+  def multiply(x,y) :
+    z=x*y
+    print('z is', z)
+    print(x, '*', y, '=', z)
+    return z
+
+  def divide(x,y) :
+    if y == 0:
+      print("Error: Cannot divide by zero!")
+      return None
+    z=x/y
+    print('z is', z)
+    print(x, '/', y, '=', z)
+    return z
+
+  def add(x,y) :
+    z=x+y
+    print('z is', z)
+    print(x, '+', y, '=', z)
+    return z
+
+  def subtract(x,y) :
+    z=x-y
+    print('z is', z)
+    print(x, '-', y, '=', z)
+    return z
+
+  def choose(x, y, a):
+    if(a == 'multiply'):
+      multiply(x, y)
+    elif(a == 'subtract'):
+      subtract(x, y)
+    elif(a == 'divide'):
+      divide(x, y)
+    else:
+      print("adding", x, "and", y)
+      print("if you did not choose this, try again and make sure to enter 'multiply', 'divide' or 'subtract'")
+      add(x, y)
+  
+  dataGood = False
+  while not dataGood:
+    try:
+      val1 = int(input("Enter your first number >> "))
+      val2 = int(input("Enter your second number >> "))
+      dataGood = True
+    except ValueError:
+      print("That wasn't a number. Enter a valid integer. ಠ_ಠ")
+  func = input("function: choose 'add', 'subtract', 'multiply' or 'divide' >>")
+  choose(val1, val2, func)
+main8()
