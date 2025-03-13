@@ -1,0 +1,39 @@
+from gpiozero import LED
+import time
+
+red_led = LED(3)
+yellow_led = LED(27)
+green_led = LED(10)
+
+
+def stop_light(status):
+    red,yellow,green = status
+    print('red = ', status[red])
+    print('yellow = ', status[yellow])
+    print('green = ', status[green])
+    
+    if(status[red] == 1):
+        print("ran")
+        red_led.on()
+    else:
+        red_led.off()
+        
+    if(status[yellow] == 1):
+        yellow_led.on()
+    else:
+        yellow_led.off()
+        
+    if(status[green] == 1):
+        green_led.on()
+    else:
+        green_led.off()
+
+
+def main():
+    print("Welcome To The STEAM Clown Makey Bot")
+    traffic_light_status = {'red_LED' : 0, 'yellow_LED' : 0, 'green_LED' : 0}
+    stop_light(traffic_light_status)
+
+main()
+
+
