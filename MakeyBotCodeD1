@@ -1,0 +1,114 @@
+from gpiozero import LED
+from gpiozero import Servo
+from gpiozero import PWMLED
+import time
+from time import sleep
+
+#Stop Light
+red_led = LED(15)
+yellow_led = LED(27)
+green_led = LED(10)
+
+red_led.on()
+yellow_led.on()
+green_led.on()
+
+def stop_light(status):
+    red,yellow,green = status
+    print('red = ', status[red])
+    print('yellow = ', status[yellow])
+    print('green = ', status[green])
+    
+    if(status[red] == 1):
+        red_led.on()
+    else:
+        red_led.off()
+        
+    if(status[yellow] == 1):
+        yellow_led.on()
+    else:
+        yellow_led.off()
+        
+    if(status[green] == 1):
+        green_led.on()
+    else:
+        green_led.off()
+
+def test(var):
+    try:
+      int(var)
+    except ValueError:
+      print("That wasn't a number. Enter a valid number. ಠ_ಠ")
+
+def main():
+    print("Welcome To The STEAM Clown Makey Bot")
+    x = input("Turn on Red LED? Type 1 for Yes or 0 for No: ")
+    test(x)
+    y = input("Turn on Yellow LED? Type 1 for Yes or 0 for No: ")
+    test(y)
+    z = input("Turn on Green LED? Type 1 for Yes or 0 for No: ")
+    test(z)
+    traffic_light_status = {'red_LED' : x, 'yellow_LED' : y, 'green_LED' : z}
+    stop_light(traffic_light_status)
+
+main()
+
+#RGB
+debug_messages = 1 # If debug messages is 1 then message will be printed, else if 0 they will be silenced
+if debug_messages : print("Debug Message are 'ON'")
+else : print("Debug Message are 'OFF'")
+
+# Raspberry Pi Pins
+reye_red_pwm_pin = PWMLED(3) 
+reye_green_pwm_pin = PWMLED(2) 
+reye_blue_pwm_pin = PWMLED(17)
+
+leye_red_pwm_pin = PWMLED(19) 
+leye_green_pwm_pin = PWMLED(13) 
+leye_blue_pwm_pin = PWMLED(6) 
+
+def leyes_RGB(eyes_status):
+    if debug_messages : print("Running eyes_RGB function")
+    if debug_messages : print(eyes_status)
+    leye_red,leye_green,leye_blue = leyes_status
+    #reye_red,reye_green,reye_blue = reyes_status
+    #leye_red,leye_green,leye_blue,reye_red,reye_green,reye_blue = eyes_status
+    
+    leye_red_pwm_pin.value = leyes_status[leye_red]
+    leye_green_pwm_pin.value = leyes_status[leye_green]
+    leye_blue_pwm_pin.value = leyes_status[leye_blue]
+    #reye_red_pwm_pin.value = reyes_status[reye_red]
+    #reye_green_pwm_pin.value = reyes_status[reye_green]
+    #reye_blue_pwm_pin.value = reyes_status[reye_blue]
+
+def main():
+    print("Welcome To The STEAM Clown Makey Bot")
+    leyes_RGBLEDs = {'red_RGBLED':.5, 'green_RGBLED':.1, 'blue_RGBLED':.8}
+    reyes_RGBLEDs = {'red_RGBLED':.5, 'green_RGBLED':.1, 'blue_RGBLED':.8}
+    #eyes_RGBLEDs = {'leye_red_RGBLED':.1, 'leye_green_RGBLED':1, 'leye_blue_RGBLED':.1,'reye_red_RGBLED':.1, 'reye_green_RGBLED':1, 'reye_blue_RGBLED':.1}
+    if debug_messages : print("Calling eyes_RGB function")
+    eyes_RGB(leyes_RGBLEDs)
+    eyes_RGB(reyes_RGBLEDs)
+    if debug_messages : print("Returned from eyes_RGB function")
+
+main()
+
+#Servo
+ 
+myGPIO=17
+ 
+servo = Servo(myGPIO)
+ 
+while True:
+    servo.mid()
+    print("mid")
+    sleep(0.5)
+    servo.min()
+    print("min")
+    sleep(1)
+    servo.mid()
+    print("mid")
+    sleep(0.5)
+    servo.max()
+    print("max")
+    sleep(1)
