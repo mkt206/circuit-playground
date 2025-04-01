@@ -15,3 +15,15 @@ print(fhand)
 
 #Newline character = \n
 #ex: print('Hello\n World!')
+
+# -------------------------------------------------------
+# Challenge 2: Try opening a file that does not exist... Like "matrix2.txt"
+xfile = open('text-file-matrix.txt')
+print(xfile)
+
+# It gives the error message, FileNotFoundError: [Errno 2] No such file or directory: 'stuff.txt'
+# The file name could be wrong or you may not be in the same directory. 
+# It is assumed, if you don't specify, that you want to call a file in your working directory. To call a file in a different directory you follow this format:
+#fhand = open('./directory/file.txt', 'r') <- if file is not in working directory
+#ex: fhand = open('./tmp/text-file-matrix.txt', 'r')
+# -------------------------------------------------------
