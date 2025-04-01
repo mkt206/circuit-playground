@@ -1,0 +1,17 @@
+fhand = open('text-file-matrix.txt', 'r')
+print(fhand)
+
+#example = open('file.txt', 'r')
+#example = open('./directory/file.txt', 'r') <- if file is not in working directory
+#ex: fhand = open('./tmp/text-file-matrix.txt', 'r')
+
+# -------------------------------------------------------
+# Challenge 1:
+# 1) _io.TextIOWrapper : Handles Text files; shows file handle is from Python’s built-in _io module
+# 2) name='matrix.txt' : Name of file that was opened
+# 3) mode='r'          : mode file was opened in; r = read mode; w = write mode
+# 4) encoding='UTF-8'> : specifies the character encoding used for reading or writing the file
+# -------------------------------------------------------
+
+#Newline character = \n
+#ex: print('Hello\n World!')
