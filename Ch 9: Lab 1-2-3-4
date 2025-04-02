@@ -67,7 +67,19 @@ print('Line Count:', count)
 # -------------------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Lab 4: 
+# Lab 4: Stripping characters (\n) from files
+xfile = open('text-file-matrix.txt')
+for line in xfile:
+    print(line)
+print("-------------------------------------------")
+
+xfile = open('text-file-matrix.txt')
+for line in xfile:
+    line = line.rstrip()
+    print(line)
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Lab 5: Reading the whole file
 xfile = open('text-file-matrix.txt')
 whale = xfile.read()
 print(whale)
