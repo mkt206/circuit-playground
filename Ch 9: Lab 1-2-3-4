@@ -68,3 +68,15 @@ print('Line Count:', count)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Lab 4: 
+xfile = open('text-file-matrix.txt')
+whale = xfile.read()
+print(whale)
+print(len(whale))
+print(whale[80:89])
+
+# printing Red Pill
+xfile = open('text-file-matrix.txt')
+whale = xfile.read()
+print(whale)
+print(len(whale))
+print(whale[191:200])
