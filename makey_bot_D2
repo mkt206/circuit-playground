@@ -1,0 +1,87 @@
+from gpiozero import LED, Servo, PWMLED
+from time import sleep
+
+# Debug toggle
+debug_messages = 1
+
+# Traffic lights
+red_led = LED(15)
+yellow_led = LED(27)
+green_led = LED(10)
+
+def stop_light(status):
+    red = status['red_LED']
+    yellow = status['yellow_LED']
+    green = status['green_LED']
+    
+    print(f'red = {red}')
+    print(f'yellow = {yellow}')
+    print(f'green = {green}')
+    
+    red_led.on() if red == '1' else red_led.off()
+    yellow_led.on() if yellow == '1' else yellow_led.off()
+    green_led.on() if green == '1' else green_led.off()
+
+def test(var):
+    try:
+        int(var)
+    except ValueError:
+        print("That wasn't a number. Enter a valid number. ಠ_ಠ")
+
+def light_control():
+    print("Welcome To The STEAM Clown Makey Bot")
+    x = input("Turn on Red LED? Type 1 for Yes or 0 for No: ")
+    test(x)
+    y = input("Turn on Yellow LED? Type 1 for Yes or 0 for No: ")
+    test(y)
+    z = input("Turn on Green LED? Type 1 for Yes or 0 for No: ")
+    test(z)
+    traffic_light_status = {'red_LED': x, 'yellow_LED': y, 'green_LED': z}
+    stop_light(traffic_light_status)
+
+# RGB Eye Pins
+reye_red_pwm_pin = PWMLED(3)
+reye_green_pwm_pin = PWMLED(2)
+reye_blue_pwm_pin = PWMLED(17)
+
+leye_red_pwm_pin = PWMLED(19)
+leye_green_pwm_pin = PWMLED(13)
+leye_blue_pwm_pin = PWMLED(6)
+
+def eyes_RGB(eyes_status):
+    if debug_messages:
+        print("Running eyes_RGB function")
+        print(eyes_status)
+    leye_red_pwm_pin.value = eyes_status['red_RGBLED']
+    leye_green_pwm_pin.value = eyes_status['green_RGBLED']
+    leye_blue_pwm_pin.value = eyes_status['blue_RGBLED']
+
+def rgb_control():
+    if debug_messages:
+        print("Debug messages are 'ON'")
+    leyes_RGBLEDs = {'red_RGBLED': 0.5, 'green_RGBLED': 0.1, 'blue_RGBLED': 0.8}
+    eyes_RGB(leyes_RGBLEDs)
+
+# Servo on unused pin (change from 17!)
+myGPIO = 22
+servo = Servo(myGPIO)
+
+def servo_test():
+    while True:
+        servo.mid()
+        print("mid")
+        sleep(0.5)
+        servo.min()
+        print("min")
+        sleep(1)
+        servo.mid()
+        print("mid")
+        sleep(0.5)
+        servo.max()
+        print("max")
+        sleep(1)
+
+# Run
+light_control()
+rgb_control()
+# servo_test()  # Uncomment to test servo in a loop
